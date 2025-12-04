@@ -1,2 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+:root {
+  --main-title-color: #428df0;
+  --input-color: rgb(143, 146, 150);
+  --input-focus-color: #428df0;
+  --error-color: #ef4444;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--main-title-color);
+}
+
+.submit-button {
+  background-color: var(--main-title-color) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.input-error-message {
+  color: var(--error-color);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* Input */
+p-floatlabel .p-inputtext {
+  width: 100%;
+}
+
+p-floatlabel label {
+  font-size: 16px !important;
+  color: var(--input-color) !important;
+}
+
+p-floatlabel input {
+  font-size: 16px !important;
+  color: var(--input-color) !important;
+  border-color: var(--input-color) !important;
+}
+
+p-floatlabel input:focus + label {
+  color: var(--input-color) !important;
+  border-color: var(--input-color) !important;
+}
+
+/* Input Error */
+.error-field .p-inputtext {
+  border-color: var(--error-color) !important; /* red-500 */
+}
+
+.error-field label {
+  color: var(--error-color) !important;
+}
