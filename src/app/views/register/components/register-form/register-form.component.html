@@ -1,0 +1,150 @@
+<div class="w-full flex flex-col items-center justify-center px-52">
+  <!-- Header-->
+  <div class="flex flex-col gap-4 items-center">
+    <img src="icon/sweetBooki.svg" alt="">
+
+    <div class="flex flex-col items-center">
+      <h1>Crear cuenta</h1>
+      <p>Registrate y descarga de tus libros favoritos</p>
+    </div>
+  </div>
+
+  <!-- Formulario -->
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-7 w-full mt-6">
+
+    <div class="w-full flex gap-3">
+
+      <div class="w-full">
+        <div class="float-container"
+            [ngClass]="{
+              'error-field': firstName?.touched && firstName?.invalid
+            }">
+
+          <input type="text" id="firstNameInput" placeholder=" " formControlName="firstName" maxlength="30"/>
+          <label for="firstNameInput">Primer nombre *</label>
+        </div>
+
+        @if (getErrorMessage(firstName)) {
+          <p class="input-error-message">{{ getErrorMessage(firstName) }}</p>
+        }
+      </div>
+
+      <div class="w-full">
+        <div class="float-container">
+          <input type="text" id="secondNameInput" placeholder=" " formControlName="secondName" maxlength="30"/>
+          <label for="secondNameInput">Segundo nombre</label>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="w-full flex gap-3">
+      <div class="w-full">
+        <div class="float-container"
+            [ngClass]="{
+              'error-field': lastName?.touched && lastName?.invalid
+            }">
+
+          <input type="text" id="lastNameInput" placeholder=" " formControlName="lastName" maxlength="40"/>
+          <label for="lastNameInput">Apellido *</label>
+        </div>
+
+        @if (getErrorMessage(lastName)) {
+          <p class="input-error-message">{{ getErrorMessage(lastName) }}</p>
+        }
+      </div>
+
+      <div class="w-full">
+        <div class="float-container"
+          [ngClass]="{
+            'error-field': lastName?.touched && lastName?.invalid
+          }">
+          <input
+            type="date"
+            id="birthDate"
+            formControlName="birthDate"
+          />
+          <label for="birthDate">Fecha de nacimiento *</label>
+        </div>
+
+        @if (getErrorMessage(birthDate)) {
+          <p class="input-error-message">{{ getErrorMessage(birthDate) }}</p>
+        }
+      </div>
+
+
+    </div>
+
+    <div class="w-full">
+      <div class="float-container"
+        [ngClass]="{
+          'error-field': phoneNumber?.touched && phoneNumber?.invalid
+        }">
+        <input type="text" id="phoneNumberInput" placeholder=" " formControlName="phoneNumber" maxlength="15"/>
+        <label for="phoneNumberInput">Numero de celular</label>
+      </div>
+
+      @if (getErrorMessage(phoneNumber)) {
+        <p class="input-error-message">{{ getErrorMessage(phoneNumber) }}</p>
+      }
+    </div>
+
+    <div class="w-full">
+      <div class="float-container"
+          [ngClass]="{
+            'error-field': email?.touched && email?.invalid
+          }">
+
+        <input type="text" id="emailInput" placeholder=" " formControlName="email" maxlength="80"/>
+        <label for="emailInput">Correo electrónico *</label>
+      </div>
+
+      @if (getErrorMessage(email)) {
+        <p class="input-error-message">{{ getErrorMessage(email) }}</p>
+      }
+    </div>
+
+    <div class="w-full flex gap-3">
+      <div class="w-full">
+        <div class="float-container"
+            [ngClass]="{
+              'error-field': password?.touched && password?.invalid
+            }">
+
+          <input type="password" id="passwordInput" placeholder=" " formControlName="password" maxlength="80"/>
+          <label for="passwordInput">Contraseña *</label>
+        </div>
+
+        @if (getErrorMessage(password)) {
+          <p class="input-error-message">{{ getErrorMessage(password) }}</p>
+        }
+      </div>
+
+      <div class="w-full">
+        <div class="float-container"
+            [ngClass]="{
+              'error-field': confirmPassword?.touched && confirmPassword?.invalid
+            }">
+
+          <input type="password" id="confirmPasswordInput" placeholder=" " formControlName="confirmPassword" maxlength="80"/>
+          <label for="confirmPasswordInput">Confirmar contraseña *</label>
+        </div>
+
+        @if (getErrorMessage(confirmPassword)) {
+          <p class="input-error-message">{{ getErrorMessage(confirmPassword) }}</p>
+        }
+      </div>
+    </div>
+
+
+    <button pButton type="submit" label="Registrarse" class="submit-button"></button>
+  </form>
+
+  <!-- opciones -->
+  <div class="w-full flex justify-center mt-2">
+    <p>¿Ya tienes una cuenta?
+      <a href="" style="color: var(--main-title-color);" routerLink="/login"> Inicia sesión </a>
+    </p>
+  </div>
+</div>
