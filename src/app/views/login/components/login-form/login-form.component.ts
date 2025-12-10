@@ -1,13 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { PrimeModule } from '../../../../shared/primeng/prime.module';
 import { CommonModule } from '@angular/common';
 import { AuthLoginService } from '../../../../services/login/auth-login.service';
 
 @Component({
   selector: 'app-login-form',
-  imports: [PrimeModule, CommonModule, ReactiveFormsModule],
+  imports: [PrimeModule, CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.css'
 })
